@@ -7,7 +7,7 @@ COPY qemu-arm-static /usr/bin
 RUN echo "deb http://archive.raspberrypi.org/debian/ stretch main" > /etc/apt/sources.list.d/raspberrypi.list
 RUN wget https://archive.raspberrypi.org/debian/raspberrypi.gpg.key -O - | apt-key add -
 RUN apt-get update
-RUN apt-get install python-rpi.gpio
+RUN apt-get install -y python-rpi.gpio libavahi-compat-libdnssd-dev
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
